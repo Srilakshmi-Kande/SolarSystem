@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        body{
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: scroll;
+        }
+        .container{
+            font-size: 10px;
+            width: 30vw;
+            height: 100%;
+            position: relative;
+            right: 30em;
+           
+        }
+        .sun{
+            position: absolute;
+            top: 50em;
+            left: 50em;
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 3em white;
+        }
+        .earth, .moon, .mercury ,.venus, .mars,.satrun, .jupiter, .urenus, .neptune, .pluto, .satring{
+            position: absolute;
+            border-style: solid;
+            border-color: white;
+            border-width: 0.1em 0.1em 0.1em 0.1em;
+            border-radius: 50%;
+             
+        }
+        .mercury{
+            top: 47.5em;
+            left: 47.5em;
+            width: 15em;
+            height: 15em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .venus{
+            top: 45em;
+            left: 45em;
+            width: 20em;
+            height: 20em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .earth{
+            top: 40em;
+            left: 40em;
+            width: 30em;
+            height: 30em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .mars{
+            top: 35em;
+            left: 35em;
+            width: 40em;
+            height: 40em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .satrun{
+            top: 27em;
+            left: 28em;
+            width: 55em;
+            height: 55em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .jupiter{
+            top: 20em;
+            left: 20em;
+            width: 70em;
+            height: 70em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .urenus{
+            top: 14em;
+            left: 13em;
+            right: 0;
+            width: 82em;
+            height: 82em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .neptune{
+            top: 8em;
+            left: 8em;
+            width: 95em;
+            height: 95em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .pluto{
+            top: 0;
+            left: 0;
+            width: 110em;
+            height: 110em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .moon{
+            top:2em;
+            right: 1.5em;
+            width: 5em;
+            height: 5em;
+            animation: orbit 2.7s linear infinite;
+        }
+        .satring{
+            top:4em;
+            right: -5em;
+            width: 7em;
+            height: 8em;
+           
+        }
+        .earth::before,
+        .moon::before,
+        .mercury::before,
+        .venus::before,
+        .mars::before,
+        .jupiter::before,
+        .neptune::before,
+        .satrun::before,
+        .pluto::before,
+        .urenus::before,
+        .satring::before{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+
+        }
+        .mercury::before{
+            top: 12em ;
+            right: 12em;
+            width: 2em;
+            height: 2em;
+            background-color: grey;
+        }
+        .venus::before{
+            top: 1.8em ;
+            right: 1.8em;
+            width: 2em;
+            height: 2em;
+            background-color: peachpuff;
+        }
+        .earth::before{
+            top: 2.8em ;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: rgb(0, 128, 255);
+        }
+        .mars::before{
+            top: 3.6em ;
+            right: 3.6em;
+            width: 4em;
+            height: 4em;
+            background-color: rgb(235, 85, 4);
+        }
+        .urenus::before{
+            top: 4.5em ;
+            right: 15em;
+            width: 5em;
+            height: 5em;
+            background-color: aqua;
+        }
+        .satrun::before{
+            top: 5em ;
+            right: -4em;
+            width: 6em;
+            height: 6em;
+            background-color: rgb(238, 243, 184);
+        }
+        .jupiter::before{
+            top: 6.4em ;
+            right: 20em;
+            width: 7em;
+            height: 7em;
+            background:repeating-linear-gradient(peachpuff 10%,grey 50%);
+        }
+        .neptune::before{
+            top: 7.2em ;
+            right: 13em;
+            width: 8em;
+            height: 8em;
+            background-color: rgb(0, 21, 255);
+        }
+        .pluto::before{
+            top: 8em ;
+            right: 15em;
+            width: 9em;
+            height: 9em;
+            background-color: rgb(236, 221, 110);
+        }
+        .moon::before{
+            top: 0.3em;
+            right: 0.2em;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: silver;
+        }
+        @keyframes orbit{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="mercury"></div>
+        <div class="venus"></div>
+        <div class="earth">
+            <div class="moon"> </div>
+        </div>
+        <div class="mars"></div>
+        <div class="jupiter"></div>
+        <div class="satrun">
+            <div class="satring"></div>
+        </div>
+        <div class="urenus"></div>
+        <div class="neptune"></div>
+        <div class="pluto"></div>
+    </div>
+</body>
+</html>
